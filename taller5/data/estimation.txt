@@ -1,0 +1,19 @@
+Estimación de complejidades
+
+Agregar elemento:
+O(log n) porque después de agregar el elemento se debe restaurar el invariable del heap.
+
+Retornar máximo/mínimo:
+O(1) ya que solo se debe retornar el primer elemento del arreglo.
+
+Retirar máximo/mínimo:
+O(log n) porque después de remover la raíz se debe restaurar el invariable del heap.
+
+Mover el último elemento arriba en el árbol:
+O(log n) ya que se deben realizar un número de intercambios de elementos que puede ser en el peor caso la altura del heap (log n).
+
+Mover la raíz abajo en el árbol del heap:
+O(log n) por la misma razón que al subir el último elemento.
+
+Funcionamiento y complejidad de los algoritmos para ordenar los pedidos por precio y por cercanía que implementó con el heap.
+Estos algoritmos son de complejidad O(log n) ya que el ordenamiento es realizado directamente durante la inserción de los elementos, y este orden se mantiene al remover el máximo o mínimo, métodos que tienen complejidad temporal  O(log n).

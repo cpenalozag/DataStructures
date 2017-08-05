@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Reemplazar el valor de name, "NombreDelProyecto", por el nombre de su proyecto -->
+<project name="taller" default="all" basedir=".">
+
+   <!-- Reemplazar el valor de project.name, master -->
+   <property name="project.name" value="taller" />
+
+   <!-- Si desea, reemplazar el número de la versión -->
+	<property name="version" value="master" />
+	<property name="suffix" value="-${version}" />
+
+   <!-- Variables que describen los directiorios principales del proyecto -->
+	<property name="dir.src" value="src" />
+	<property name="dir.bin" value="bin" />
+	<property name="dir.dist" value="dist" />
+	<property name="dir.data" value="data" />
+	<property name="dir.docs" value="docs" />
+   	<property name="dir.libs" value="lib" />
+
+   <!-- Directiorio en el cual se almacenará el archivo jar -->
+	<property name="jar.base" value="${dir.dist}/${project.name}.jar" />
+
+   <!-- Reemplazar el valor de jar.main.class, com.example.MainClass por la clase principal del programa -->
+   <property name="jar.main.class" value="taller.Main" />
+
+   <!-- Establece el classpath y las librerías a ser usadas en el proyecto, no requiere modificación -->
+   <manifestclasspath property="jar.classpath" jarfile="${jar.base}">
+       <classpath>
+           <fileset dir="${dir.libs}/" includes="*.jar"/>
+       </classpath>
+   </manifestclasspath>
+
+   <!-- Establece el classpath para la compilación de las clases del proyecto -->
+   <path id="classpath">
+		<fileset dir="${dir.libs}/">
+			<include name="*.jar" />
+			<exclude name="*sources.jar"/>
+			<exclude name="*javadoc.jar"/>
+		</fileset>
+	</path>
+
+   <!-- Elimina clases compiladas -->
+   <target name="clean">
+		<delete dir="${dir.bin}" />
+	</target>
+
+   <!-- Crea los directiorios principales del proyecto, si estos no existen -->
+	<target name="prepare">
+		<mkdir dir="${dir.bin}" />
+      <mkdir dir="${dir.data}"/>
+      <mkdir dir="${dir.libs}"/>
+      <mkdir dir="${dir.docs}"/>
+      <mkdir dir="${dir.dist}"/>
+	</target>
+
+   <!-- Realiza la compilación de los archivos de código fuente de Java  -->
+	<target name="compile" depends="prepare">
+		<javac srcdir="${dir.src}" destdir="${dir.bin}" classpathref="classpath" encoding="utf-8" debug="true" debuglevel="lines,vars,source"/>
+	</target>
+
+  <!-- Empaqueta las clases compiladas, junto a las librerías en un archivo .jar. Este archivo ejecutable se guarda en la carpeta dist -->
+  <target name="jar" depends="compile">
+    <jar destfile="${jar.base}" basedir="${dir.bin}">
+     <manifest>
+         <attribute name="Main-Class" value="${jar.main.class}" />
+         <attribute name="Class-Path" value="${jar.classpath}" />
+     </manifest>
+   </jar>
+  </target>
+
+   <!-- Realiza la compilación de la documentación de Java, en caso de que las clases se encuentren documentadas  -->
+	<target name="javadoc">
+		<javadoc encoding="UTF-8" charset="UTF-8" docencoding="UTF-8" classpathref="classpath"
+			sourcepath="${dir.src}" destdir="${dir.docs}/javadoc" />
+	</target>
+
+   <!--  Ejecuta y emite los resultados dispuestos por el conjunto de pruebas unitarias realizadas por los estudiantes  -->
+   <target name="test">
+      <junit fork="yes" printsummary="on" haltonfailure="on">
+        <formatter type="xml"/>
+        <batchtest fork="yes" todir="${junit.output.dir}">
+            <resources>
+               <zipfileset src="${jar.dir}" includes="**/*Test.class"/>
+            </resources> 
+        </batchtest>            
+        <classpath refid="testsplus.classpath"/>
+    </junit>
+   </target>
+
+   <!-- Ejecuta todas las instrucciones de compilación descritas previamente, como
+        resultado, se obtiene un archivo .jar ejecutable en la carpeta dist, ade-
+        más del conjunto de documentos de javadoc en la carpeta docs.-->
+	<target name="all" depends="jar, javadoc" />
+
+</project>

@@ -1,0 +1,1 @@
+HashMap adj es la lista de adyacencias del grado, este guarda como llave los identificadores de los nodos y como valor guarda una lista de arcos adyacentes, esta permite realizar las bœsquedas y dem‡s requerimientos del grafo.

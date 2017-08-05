@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20140826-r5761">
+  <project autorefresh="true" build="bin/" main="taller.Main" manifest="" root="src/" work="">
+    <createjar file="taller.jar" flags="12"/>
+    <source>
+      <file active="true" name="taller/mundo/Screen.java" package="algorithm.race" timestamp="18-Jul-2015 20:07:49">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/test/MainTest.java" package="taller.test" timestamp="13-Aug-2015 11:59:05">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/Main.java" package="taller" timestamp="13-Aug-2015 12:14:35">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/teams/TimSortTeam.java" package="taller.mundo.teams" timestamp="13-Aug-2015 12:21:44">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/teams/ShellSortTeam.java" package="taller.mundo.teams" timestamp="13-Aug-2015 12:21:37">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/teams/SelectionSortTeam.java" package="taller.mundo.teams" timestamp="13-Aug-2015 12:21:30">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/teams/QuickSortTeam.java" package="taller.mundo.teams" timestamp="16-Aug-2015 17:41:49">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/teams/MergeSortTeam.java" package="taller.mundo.teams" timestamp="16-Aug-2015 17:40:47">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/teams/InsertionSortTeam.java" package="taller.mundo.teams" timestamp="13-Aug-2015 12:20:20">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/teams/BubbleSortTeam.java" package="taller.mundo.teams" timestamp="13-Aug-2015 12:19:57">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/teams/AlgorithmTeam.java" package="taller.mundo.teams" timestamp="13-Aug-2015 12:19:20">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/Stopwatch.java" package="taller.mundo" timestamp="16-Aug-2015 16:26:11">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/mundo/AlgorithmTournament.java" package="taller.mundo" timestamp="16-Aug-2015 17:38:54">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/interfaz/Screen.java" package="taller.interfaz" timestamp="16-Aug-2015 16:29:54">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="taller/interfaz/AlgorithmCLI.java" package="taller.interfaz" timestamp="13-Aug-2015 12:13:20">
+        <select from="13" to="13"/>
+        <scroll column="0" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath>
+      <file absolute="false" name="../lib/hamcrest-core-1.3.jar"/>
+      <file absolute="false" name="../lib/junit-4.12.jar"/>
+    </classpath>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
